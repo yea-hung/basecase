@@ -1,0 +1,10 @@
+Package: basecase
+Title: Base-R Functions for Mimicking dplyr's `case_match()` and `case_when()`
+Version: 0.2025.3.12
+Authors@R: 
+    person("Yea-Hung", "Chen", , "yea-hung.chen@ucsf.edu", role = "aut)
+Description: Base-R functions for mimicking dplyr's `case_match()` and `case_when()`. Unlike `case_match()` and `case_when()`, `base_match()` and `base_when()` return factors.
+License: `use_mit_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
