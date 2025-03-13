@@ -1,7 +1,7 @@
 # Motivation
 
 As [mentioned elsewhere](https://github.com/tidyverse/funs/issues/72), `case_match()` and `case_when()` do not return a factor. A [typical tidyverse solution](https://stackoverflow.com/questions/49572416/r-convert-to-factor-with-order-of-levels-same-with-case-when) for getting a factor out of `case_match()` with levels in a desired order is something like this:
-
+ 
 ```
 ii <- ii %>%
   mutate(
