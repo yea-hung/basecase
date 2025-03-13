@@ -4,7 +4,7 @@
 
 # Installation
 
-Install *devtools* if you don't alrady have it:
+Install *devtools* if you don't already have it:
 
 ```
 install.packages('devtools')
