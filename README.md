@@ -44,9 +44,23 @@ Install the *basecase* package:
 devtools::install_github('yea-hung/basecase')
 ```
 
-# Usage
+# Examples
 
-See the built-in help pages.
+An example of `base_match()`:
+
+```
+ii$country<-base_match(ii$dmdborn4,c('USA'=1,'Other'=2))
+```
+
+An example of `base_when()`:
+
+```
+ii$cholesterol<-base_when(list(
+   'Desirable'=ii$lbxtc<200,
+   'Borderline high'=(ii$lbxtc>=200)&(ii$lbxtc<240),
+   'High'=ii$lbxtc>=240
+))
+```
 
 # Note
 
