@@ -46,6 +46,13 @@ devtools::install_github('yea-hung/basecase')
 
 # Examples
 
+## Data
+
+```
+data("nhanes")
+ii<-nhanes
+```
+
 ## `base_match()`
 
 Using only base R:
