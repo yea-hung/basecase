@@ -19,7 +19,7 @@ Compare the above with the following base-R solution:
 ```
 dmdborn4_codebook<-c('USA'=1,'Other'=2)
 ii$country<-factor(ii$dmdborn4,levels=dmdborn4_codebook,
-labels=names(dmdborn4_codebook))
+                   labels=names(dmdborn4_codebook))
 ```
 
 Here, we only have to type the level labels once: that one occurrence defines both the label-level mapping and the order of the levels.
