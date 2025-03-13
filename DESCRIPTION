@@ -5,7 +5,7 @@ Authors@R:
     person(given = 'Yea-Hung', family = 'Chen', 
        email = 'yea-hung.chen@ucsf.edu', role = c('aut','cre'))
 Description: Base-R functions for mimicking dplyr's case_match() and `case_when()
-License: `use_mit_license()`
+License: MIT
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
