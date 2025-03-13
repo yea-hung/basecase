@@ -88,6 +88,6 @@ ii <- ii %>%
 
 # Note
 
-`base_when()` does not exactly mimic `case_when()`: 
+Despite the cute name, `base_when()` does not exactly mimic `case_when()`, and I do not intend it to. The key difference is as follows: 
 - `base_when()` will evaluate all conditions defined in `conditions` 
 - `case_when()` will stop when a condition is met
