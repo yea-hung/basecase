@@ -1,5 +1,5 @@
 Package: basecase
-Title: Base-R Functions for Mimicking dplyr's `case_match()` and `case_when()`
+Title: Base-R Functions for Mimicking `case_match()` and `case_when()`
 Version: 0.2025.3.12
 Authors@R: 
     person("Yea-Hung", "Chen", , "yea-hung.chen@ucsf.edu", role = "aut)
