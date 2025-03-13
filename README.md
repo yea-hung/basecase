@@ -57,7 +57,7 @@ ii$country<-base_match(ii$dmdborn4,c('USA'=1,'Other'=2))
 Using tidyverse piping:
 
 ```
-ii<-ii %>% 
+ii <- ii %>% 
   mutate(country=base_match(dmdborn4,c('USA'=1,'Other'=2)))
 ```
 
@@ -76,7 +76,7 @@ ii$cholesterol<-base_when(list(
 Using *dplyr* piping:
 
 ```
-ii<-ii %>% 
+ii <- ii %>% 
   mutate(cholesterol=base_when(
     list(
       'Desirable'=ii$lbxtc<200,
