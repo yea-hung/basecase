@@ -48,10 +48,16 @@ devtools::install_github('yea-hung/basecase')
 
 ## Data
 
+Load the package, if you haven't already loaded it:
+
+```
+library('nhanes')
+```
+
 Load the data:
 
 ```
-data("nhanes")
+data('nhanes')
 ```
 
 ## `base_match()`
