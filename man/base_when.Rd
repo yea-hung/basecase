@@ -7,7 +7,7 @@
 base_when(conditions)
 }
 \arguments{
-\item{conditions}{conditions for defining the replacement values, specified as a named list in \code{label=logical_vector} format, with the levels listed in the desired order}
+\item{conditions}{conditions for defining the replacement values, specified as a named list, with each element in \code{'label'=logical_vector} format, with the levels listed in the desired order}
 }
 \value{
 a factor
@@ -21,5 +21,5 @@ cholesterol_conditions<-list(
    'Borderline high'=(ii$lbxtc>=200)&(ii$lbxtc<240),
    'High'=ii$lbxtc>=240
 )
-ii$cholesterol<-base_when(cholesterol_conditions)   
+ii$cholesterol<-base_when(cholesterol_conditions)
 }

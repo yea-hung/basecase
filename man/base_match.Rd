@@ -9,7 +9,7 @@ base_match(original_variable, codebook)
 \arguments{
 \item{original_variable}{the original variable}
 
-\item{codebook}{the codebook, specified as a named vector in "label=level" format, with the levels listed in the desired order}
+\item{codebook}{the codebook, specified as a named vector, with each element in \code{'label'=level} format, with the levels listed in the desired order}
 }
 \value{
 a factor
