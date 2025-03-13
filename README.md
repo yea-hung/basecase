@@ -46,13 +46,24 @@ devtools::install_github('yea-hung/basecase')
 
 # Examples
 
-An example of `base_match()`:
+## `base_match()`
+
+Using only base R:
 
 ```
 ii$country<-base_match(ii$dmdborn4,c('USA'=1,'Other'=2))
 ```
 
-An example of `base_when()`:
+Using tidyverse piping:
+
+```
+ii<-ii %>% 
+  mutate(country=base_match(dmdborn4,c('USA'=1,'Other'=2)))
+```
+
+##  `base_when()`
+
+Using only base R:
 
 ```
 ii$cholesterol<-base_when(list(
@@ -60,6 +71,19 @@ ii$cholesterol<-base_when(list(
    'Borderline high'=(ii$lbxtc>=200)&(ii$lbxtc<240),
    'High'=ii$lbxtc>=240
 ))
+```
+
+Using *dplyr* piping:
+
+```
+ii<-ii %>% 
+  mutate(cholesterol=base_when(
+    list(
+      'Desirable'=ii$lbxtc<200,
+      'Borderline high'=(ii$lbxtc>=200)&(ii$lbxtc<240),
+      'High'=ii$lbxtc>=240
+    )
+  ))
 ```
 
 # Note
