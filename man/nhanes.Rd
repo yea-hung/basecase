@@ -12,7 +12,6 @@ A data frame with 8,153 rows and 3 columns:
 \item{seqn}{a unique identifier}
 \item{dmdborn4}{country of birth}
 \item{lbxtc}{total cholesterol}
-...
 }
 }
 }
