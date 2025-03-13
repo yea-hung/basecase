@@ -1,6 +1,6 @@
 # Motivation
 
-As [mentioned elsewhere](https://github.com/tidyverse/funs/issues/72), `case_match()` and `case_when()` do not return a factor. A [typical tidyverse solution](https://stackoverflow.com/questions/49572416/r-convert-to-factor-with-order-of-levels-same-with-case-when) is something like this:
+As [mentioned elsewhere](https://github.com/tidyverse/funs/issues/72), `case_match()` and `case_when()` do not return a factor. A [typical tidyverse solution](https://stackoverflow.com/questions/49572416/r-convert-to-factor-with-order-of-levels-same-with-case-when) for getting a factor out of `case_match()` with levels in a desired order is something like this:
 
 ```
 ii <- ii %>%
@@ -24,7 +24,7 @@ ii$country<-factor(ii$dmdborn4,levels=dmdborn4_codebook,
 
 Here, we only have to type the level labels once: that one occurrence defines both the label-level mapping and the order of the levels.
 
-*basecase* takes as a starting principle that one should only have to type the level labels once.
+My starting principle in writing *basecase* is that one should only have to type the level labels once.
 
 # Summary
 
