@@ -26,7 +26,7 @@ Install *devtools* if you don't already have it:
 install.packages('devtools')
 ```
 
-To install the *basecase* package:
+Install the *basecase* package:
 
 ```
 devtools::install_github('yea-hung/basecase')
