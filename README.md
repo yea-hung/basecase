@@ -73,7 +73,7 @@ ii$cholesterol<-base_when(list(
 ))
 ```
 
-Using *dplyr* piping:
+Using tidyverse piping:
 
 ```
 ii <- ii %>% 
