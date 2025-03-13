@@ -16,10 +16,9 @@ a factor
 A base-R approximation of dplyr's \code{case_when()}. Unlike \code{case_when()}, \code{base_when()} returns a factor. The levels will be ordered according to the order included in \code{conditions}.
 }
 \examples{
-cholesterol_conditions<-list(
+ii$cholesterol<-base_when(list(
    'Desirable'=ii$lbxtc<200,
    'Borderline high'=(ii$lbxtc>=200)&(ii$lbxtc<240),
    'High'=ii$lbxtc>=240
-)
-ii$cholesterol<-base_when(cholesterol_conditions)
+))
 }
