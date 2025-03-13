@@ -12,7 +12,7 @@ ii <- ii %>%
   )
 ```
 
-In this sort of solution, we have to type the levels twice. The first occurrence define the labels, while the second occurrence defines the order of the levels. I think this is sloppy and inefficient.
+In this sort of solution, we have to type the level labels twice. The first occurrence defines the labels, while the second occurrence defines the order of the levels. I think this is sloppy and inefficient.
 
 # Summary
 
