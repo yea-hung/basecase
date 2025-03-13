@@ -12,7 +12,7 @@
 base_match<-function(original_variable,codebook){
 
   # define the new variable
-  new_variable<-factor(old_variable,codebook,names(codebook))
+  new_variable<-factor(original_variable,codebook,names(codebook))
 
   # return the object
   new_variable
