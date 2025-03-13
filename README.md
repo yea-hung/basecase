@@ -3,7 +3,7 @@
 As [mentioned elsewhere](https://github.com/tidyverse/funs/issues/72), `case_match()` and `case_when()` do not return a factor. A [typical tidyverse solution](https://stackoverflow.com/questions/49572416/r-convert-to-factor-with-order-of-levels-same-with-case-when) for getting a factor out of `case_match()` with levels in a desired order is something like this:
  
 ```
-ii <- ii %>%
+nhanes <- nhanes %>%
   mutate(
     country=factor(
       case_match(dmdborn4,1 ~ 'USA',2 ~ 'Other'),
@@ -18,8 +18,8 @@ Compare the above with the following base-R solution:
 
 ```
 dmdborn4_codebook<-c('USA'=1,'Other'=2)
-ii$country<-factor(ii$dmdborn4,levels=dmdborn4_codebook,
-                   labels=names(dmdborn4_codebook))
+nhanes$country<-factor(nhanes$dmdborn4,levels=dmdborn4_codebook,
+                       labels=names(dmdborn4_codebook))
 ```
 
 Here, we only have to type the level labels once: that one occurrence defines both the label-level mapping and the order of the levels.
@@ -48,9 +48,10 @@ devtools::install_github('yea-hung/basecase')
 
 ## Data
 
+Load the data:
+
 ```
 data("nhanes")
-ii<-nhanes
 ```
 
 ## `base_match()`
@@ -58,13 +59,13 @@ ii<-nhanes
 Using only base R:
 
 ```
-ii$country<-base_match(ii$dmdborn4,c('USA'=1,'Other'=2))
+nhanes$country<-base_match(nhanes$dmdborn4,c('USA'=1,'Other'=2))
 ```
 
 Using tidyverse piping:
 
 ```
-ii <- ii %>% 
+nhanes <- nhanes %>% 
   mutate(country=base_match(dmdborn4,c('USA'=1,'Other'=2)))
 ```
 
@@ -73,22 +74,22 @@ ii <- ii %>%
 Using only base R:
 
 ```
-ii$cholesterol<-base_when(list(
-   'Desirable'=ii$lbxtc<200,
-   'Borderline high'=(ii$lbxtc>=200)&(ii$lbxtc<240),
-   'High'=ii$lbxtc>=240
+nhanes$cholesterol<-base_when(list(
+   'Desirable'=nhanes$lbxtc<200,
+   'Borderline high'=(nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
+   'High'=nhanes$lbxtc>=240
 ))
 ```
 
 Using tidyverse piping:
 
 ```
-ii <- ii %>% 
+nhanes <- nhanes %>% 
   mutate(cholesterol=base_when(
     list(
-      'Desirable'=ii$lbxtc<200,
-      'Borderline high'=(ii$lbxtc>=200)&(ii$lbxtc<240),
-      'High'=ii$lbxtc>=240
+      'Desirable'=nhanes$lbxtc<200,
+      'Borderline high'=(nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
+      'High'=nhanes$lbxtc>=240
     )
   ))
 ```

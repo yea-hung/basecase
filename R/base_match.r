@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' ii$country<-base_match(ii$dmdborn4,c('USA'=1,'Other'=2))
+#' nhanes$country<-base_match(nhanes$dmdborn4,c('USA'=1,'Other'=2))
 base_match<-function(original_variable,codebook){
 
   # define the new variable

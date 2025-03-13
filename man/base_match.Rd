@@ -18,5 +18,5 @@ a factor
 A base-R approximation of dplyr's \code{case_match()}. Unlike \code{case_match()}, \code{base_when()} returns a factor. The levels will be ordered according to the order included in \code{codebook}.
 }
 \examples{
-ii$country<-base_match(ii$dmdborn4,c('USA'=1,'Other'=2))
+nhanes$country<-base_match(nhanes$dmdborn4,c('USA'=1,'Other'=2))
 }
