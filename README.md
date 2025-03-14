@@ -68,7 +68,7 @@ Using only base R:
 nhanes$country<-base_match(nhanes$dmdborn4,c('USA'=1,'Other'=2))
 ```
 
-Using tidyverse piping (requires *dplyr*):
+Using tidyverse piping (this example requires *dplyr*):
 
 ```
 nhanes <- nhanes %>% 
@@ -87,7 +87,7 @@ nhanes$cholesterol<-base_when(list(
 ))
 ```
 
-Using tidyverse piping (requires *dplyr*):
+Using tidyverse piping (this example requires *dplyr*):
 
 
 ```
