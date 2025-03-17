@@ -81,9 +81,9 @@ Using only base R:
 
 ```
 nhanes$cholesterol<-base_when(list(
-   'Desirable'=nhanes$lbxtc<200,
-   'Borderline high'=(nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
-   'High'=nhanes$lbxtc>=240
+   'Desirable' = (nhanes$lbxtc<200),
+   'Borderline high' = (nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
+   'High' = (nhanes$lbxtc>=240)
 ))
 ```
 
@@ -94,9 +94,9 @@ Using tidyverse piping (this example requires *dplyr*):
 nhanes <- nhanes %>% 
   mutate(
     cholesterol=base_when(list(
-      'Desirable'=lbxtc<200,
-      'Borderline high'=(lbxtc>=200)&(lbxtc<240),
-      'High'=lbxtc>=240
+      'Desirable' = (lbxtc<200),
+      'Borderline high' = (lbxtc>=200)&(lbxtc<240),
+      'High' = (lbxtc>=240)
     ))
   )
 ```
