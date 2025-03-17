@@ -17,8 +17,8 @@ A base-R approximation of dplyr's \code{case_when()}. Unlike \code{case_when()},
 }
 \examples{
 nhanes$cholesterol<-base_when(list(
-   'Desirable'=nhanes$lbxtc<200,
-   'Borderline high'=(nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
-   'High'=nhanes$lbxtc>=240
+   'Desirable' = (nhanes$lbxtc<200),
+   'Borderline high' = (nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
+   'High' = (nhanes$lbxtc>=240)
 ))
 }
