@@ -1,5 +1,5 @@
 Package: basecase
-Title: Base-R Functions for Mimicking case_match() and case_when()
+Title: basecase
 Version: 0.2025.3.12
 Authors@R: 
     person(given = 'Yea-Hung', family = 'Chen', 
