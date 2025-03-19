@@ -65,14 +65,14 @@ data('nhanes')
 Using only base R:
 
 ```r
-nhanes$country<-base_match(nhanes$dmdborn4,c('USA'=1,'Other'=2))
+nhanes$country<-base_match(nhanes$dmdborn4,'USA'=1,'Other'=2)
 ```
 
 Using tidyverse piping (this example requires *dplyr*):
 
 ```r
 nhanes <- nhanes %>% 
-  mutate(country=base_match(dmdborn4,c('USA'=1,'Other'=2)))
+  mutate(country=base_match(dmdborn4,'USA'=1,'Other'=2)
 ```
 
 ##  `base_when()`
@@ -80,11 +80,11 @@ nhanes <- nhanes %>%
 Using only base R:
 
 ```r
-nhanes$cholesterol<-base_when(list(
+nhanes$cholesterol<-base_when(
    'Desirable' = (nhanes$lbxtc<200),
    'Borderline high' = (nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
    'High' = (nhanes$lbxtc>=240)
-))
+)
 ```
 
 Using tidyverse piping (this example requires *dplyr*):
@@ -93,11 +93,11 @@ Using tidyverse piping (this example requires *dplyr*):
 ```r
 nhanes <- nhanes %>% 
   mutate(
-    cholesterol=base_when(list(
+    cholesterol=base_when(
       'Desirable' = (lbxtc<200),
       'Borderline high' = (lbxtc>=200)&(lbxtc<240),
       'High' = (lbxtc>=240)
-    ))
+    )
   )
 ```
 

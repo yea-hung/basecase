@@ -8,9 +8,13 @@
 #' @export
 #'
 #' @examples
-#' nhanes$country<-base_match(nhanes$dmdborn4,c('USA'=1,'Other'=2))
-base_match<-function(original_variable,codebook){
+#' nhanes$country<-base_match(nhanes$dmdborn4,'USA'=1,'Other'=2)
+base_match<-function(original_variable,...){
 
+  # define the codebook
+  codebook<-list(...)
+  codebook<-unlist(codebook)
+  
   # define the new variable
   new_variable<-factor(original_variable,codebook,names(codebook))
 

@@ -4,7 +4,7 @@
 \alias{base_when}
 \title{\code{base_when()}}
 \usage{
-base_when(conditions)
+base_when(...)
 }
 \arguments{
 \item{conditions}{conditions for defining the replacement values, specified as a named list, with each element in \code{'label'=logical_vector} format, with the levels listed in the desired order}
@@ -16,9 +16,9 @@ a factor
 A base-R approximation of dplyr's \code{case_when()}. Unlike \code{case_when()}, \code{base_when()} returns a factor. The levels will be ordered according to the order included in \code{conditions}.
 }
 \examples{
-nhanes$cholesterol<-base_when(list(
+nhanes$cholesterol<-base_when(
    'Desirable' = (nhanes$lbxtc<200),
    'Borderline high' = (nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
    'High' = (nhanes$lbxtc>=240)
-))
+)
 }

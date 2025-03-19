@@ -7,12 +7,15 @@
 #' @export
 #'
 #' @examples
-#' nhanes$cholesterol<-base_when(list(
+#' nhanes$cholesterol<-base_when(
 #'    'Desirable' = (nhanes$lbxtc<200),
 #'    'Borderline high' = (nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
 #'    'High' = (nhanes$lbxtc>=240)
-#' ))
-base_when<-function(conditions){
+#' )
+base_when<-function(...){
+  
+  # define the conditions
+  conditions<-list(...)
 
   # define the new variable
   new_variable<-rep('',length(conditions[[1]]))

@@ -4,7 +4,7 @@
 \alias{base_match}
 \title{\code{base_match()}}
 \usage{
-base_match(original_variable, codebook)
+base_match(original_variable, ...)
 }
 \arguments{
 \item{original_variable}{the original variable}
@@ -18,5 +18,5 @@ a factor
 A base-R approximation of dplyr's \code{case_match()}. Unlike \code{case_match()}, \code{base_when()} returns a factor. The levels will be ordered according to the order included in \code{codebook}.
 }
 \examples{
-nhanes$country<-base_match(nhanes$dmdborn4,c('USA'=1,'Other'=2))
+nhanes$country<-base_match(nhanes$dmdborn4,'USA'=1,'Other'=2)
 }
