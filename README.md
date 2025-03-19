@@ -2,7 +2,7 @@
 
 As [mentioned elsewhere](https://github.com/tidyverse/funs/issues/72), `case_match()` and `case_when()` do not return a factor. A [typical tidyverse solution](https://stackoverflow.com/questions/49572416/r-convert-to-factor-with-order-of-levels-same-with-case-when) for getting a factor out of `case_match()` with the levels in a desired order is something like this:
  
-```
+```r
 nhanes <- nhanes %>%
   mutate(
     country=factor(
@@ -16,7 +16,7 @@ In this sort of solution, we have to type the level labels twice. The first occu
 
 Compare the above with the following base-R solution:
 
-```
+```r
 dmdborn4_codebook<-c('USA'=1,'Other'=2)
 nhanes$country<-factor(nhanes$dmdborn4,levels=dmdborn4_codebook,
                        labels=names(dmdborn4_codebook))
@@ -28,19 +28,19 @@ My starting principle in writing *basecase* is that one should only have to type
 
 # Summary
 
-*basecase* includes base-R functions for mimicking dplyr's `case_match()` and `case_when()`. Unlike the *dplyr* functions, `base_match()` and `base_when()` will each return a factor. The desired order of the levels is honored.
+An R package that uses base R to mimic dplyr's `case_match()` and `case_when()`. Unlike the *dplyr* functions, `base_match()` and `base_when()` will each return a factor. The desired order of the levels is honored.
 
 # Installation
 
 Install *devtools* if you don't already have it:
 
-```
+```r
 install.packages('devtools')
 ```
 
 Install the *basecase* package:
 
-```
+```r
 devtools::install_github('yea-hung/basecase')
 ```
 
@@ -50,13 +50,13 @@ devtools::install_github('yea-hung/basecase')
 
 Load the *basecase* package, if you haven't already loaded it:
 
-```
+```r
 library('basecase')
 ```
 
 Load the data:
 
-```
+```r
 data('nhanes')
 ```
 
@@ -64,13 +64,13 @@ data('nhanes')
 
 Using only base R:
 
-```
+```r
 nhanes$country<-base_match(nhanes$dmdborn4,c('USA'=1,'Other'=2))
 ```
 
 Using tidyverse piping (this example requires *dplyr*):
 
-```
+```r
 nhanes <- nhanes %>% 
   mutate(country=base_match(dmdborn4,c('USA'=1,'Other'=2)))
 ```
@@ -79,7 +79,7 @@ nhanes <- nhanes %>%
 
 Using only base R:
 
-```
+```r
 nhanes$cholesterol<-base_when(list(
    'Desirable' = (nhanes$lbxtc<200),
    'Borderline high' = (nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
@@ -90,7 +90,7 @@ nhanes$cholesterol<-base_when(list(
 Using tidyverse piping (this example requires *dplyr*):
 
 
-```
+```r
 nhanes <- nhanes %>% 
   mutate(
     cholesterol=base_when(list(
