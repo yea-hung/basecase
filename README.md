@@ -51,7 +51,7 @@ devtools::install_github('yea-hung/basecase')
 Load the *basecase* package, if you haven't already loaded it:
 
 ```r
-library('basecase')
+library(basecase)
 ```
 
 Load the data:
