@@ -26,7 +26,7 @@ base_when<-function(...){
   }
 
   # convert the variable to a factor
-  new_variable<-factor(new_variable,levels=names(conditions))
+  new_variable<-factor(new_variable,levels=unique(names(conditions)))
 
   # return the object
   new_variable
