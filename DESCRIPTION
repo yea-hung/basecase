@@ -1,6 +1,6 @@
 Package: basecase
 Title: basecase
-Version: 2025.3.19
+Version: 2025.3.21
 Authors@R: 
     person(given = 'Yea-Hung', family = 'Chen', 
        email = 'yea-hung.chen@ucsf.edu', role = c('aut','cre'))
