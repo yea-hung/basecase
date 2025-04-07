@@ -68,6 +68,12 @@ Using only base R:
 nhanes$country<-base_match(nhanes$dmdborn4,'USA'=1,'Other'=2)
 ```
 
+Using only base R, with `with()`:
+
+```r
+nhanes$country<-with(nhanes,base_match(dmdborn4,'USA'=1,'Other'=2))
+```
+
 Using tidyverse piping (this example requires *dplyr*):
 
 ```r
@@ -85,6 +91,16 @@ nhanes$cholesterol<-base_when(
    'Borderline high' = (nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
    'High' = (nhanes$lbxtc>=240)
 )
+```
+
+Using only base R, with `with()`:
+
+```r
+nhanes$cholesterol<-with(nhanes,base_when(
+   'Desirable' = (lbxtc<200),
+   'Borderline high' = (lbxtc>=200)&(lbxtc<240),
+   'High' = (lbxtc>=240)
+))
 ```
 
 Using tidyverse piping (this example requires *dplyr*):
