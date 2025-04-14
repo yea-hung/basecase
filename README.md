@@ -3,7 +3,7 @@
 As [mentioned elsewhere](https://github.com/tidyverse/funs/issues/72), `case_match()` and `case_when()` do not return a factor. A [typical tidyverse solution](https://stackoverflow.com/questions/49572416/r-convert-to-factor-with-order-of-levels-same-with-case-when) for getting a factor out of `case_match()` with the levels in a desired order is something like this:
  
 ```r
-nhanes <- nhanes %>%
+nhanes<-nhanes %>%
   mutate(
     country=factor(
       case_match(dmdborn4,1 ~ 'USA',2 ~ 'Other'),
@@ -77,7 +77,7 @@ nhanes$country<-with(nhanes,base_match(dmdborn4,'USA'=1,'Other'=2))
 Using tidyverse piping (this example requires *dplyr*):
 
 ```r
-nhanes <- nhanes %>% 
+nhanes<-nhanes %>% 
   mutate(country=base_match(dmdborn4,'USA'=1,'Other'=2)
 ```
 
@@ -107,7 +107,7 @@ Using tidyverse piping (this example requires *dplyr*):
 
 
 ```r
-nhanes <- nhanes %>% 
+nhanes<-nhanes %>% 
   mutate(
     cholesterol=base_when(
       'Desirable' = (lbxtc<200),
