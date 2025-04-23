@@ -1,6 +1,6 @@
 #' `base_when()`
 #'
-#' A base-R approximation of dplyr's `case_when()`. Unlike `case_when()`, `base_when()` returns a factor. The levels will be ordered according to the order included in `conditions`.
+#' A base-R approximation of *dplyr*'s `case_when()`. Unlike `case_when()`, `base_when()` returns a factor. The levels will be ordered according to the order included in `conditions`.
 #' @param conditions conditions for defining the replacement values, specified as a named list, with each element in `'label'=logical_vector` format, with the levels listed in the desired order
 #'
 #' @returns a factor
@@ -13,7 +13,7 @@
 #'    'High' = (nhanes$lbxtc>=240)
 #' )
 base_when<-function(...){
-  
+
   # define the conditions
   conditions<-list(...)
 
