@@ -25,7 +25,7 @@ base_when<-function(...,as_factor=TRUE,string_for_na=''){
     new_variable[conditions[[position]]]<-names(conditions)[position]
   }
   
-  # convert the variable to a factor, if a factor is desired
+  # convert the variable to a factor (default behavior)
   if(as_factor){
     new_variable<-factor(new_variable,levels=unique(names(conditions)))  
   }
