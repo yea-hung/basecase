@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' nhanes$country<-base_match(nhanes$dmdborn4,'USA'=1,'Other'=2)
-base_match<-function(original_variable,...){
+base_match<-function(original_variable,...,as_factor=TRUE,string_for_na=''){
 
   # define the codebook
   codebook<-list(...)
@@ -17,6 +17,12 @@ base_match<-function(original_variable,...){
 
   # define the new variable
   new_variable<-factor(original_variable,codebook,names(codebook))
+  
+  # convert the variable to a character object (not default behavior)
+  if(!as_factor){
+    new_variable<-as.character(new_variable)
+    new_variable[is.na(new_variable)]<-string_for_na
+  }
 
   # return the object
   new_variable
