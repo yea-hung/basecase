@@ -32,16 +32,16 @@ An R package that uses base R to mimic dplyr's `case_match()` and `case_when()`.
 
 # Installation
 
-Install *devtools* if you don't already have it:
+Install *remotes* if you don't already have it:
 
 ```r
-install.packages('devtools')
+install.packages('remotes')
 ```
 
 Install the *basecase* package:
 
 ```r
-devtools::install_github('yea-hung/basecase')
+remotes::install_github('yea-hung/basecase')
 ```
 
 # Examples
