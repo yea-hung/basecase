@@ -74,7 +74,7 @@ Using only base R, with `with()`:
 nhanes$country<-with(nhanes,base_match(dmdborn4,'USA'=1,'Other'=2))
 ```
 
-Using native piping:
+Using piping and *dplyr*'s `mutate()`:
 
 ```r
 nhanes<-nhanes |>
@@ -103,7 +103,7 @@ nhanes$cholesterol<-with(nhanes,base_when(
 ))
 ```
 
-Using native piping:
+Using piping and *dplyr*'s `mutate()`:
 
 ```r
 nhanes<-nhanes |>
