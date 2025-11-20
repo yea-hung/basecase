@@ -74,6 +74,13 @@ Using only base R, with `with()`:
 nhanes$country<-with(nhanes,base_match(dmdborn4,'USA'=1,'Other'=2))
 ```
 
+Using only base R, with native piping and `transform()`:
+
+```r
+nhanes<-nhanes |>
+  transform(country=base_match(dmdborn4,'USA'=1,'Other'=2))
+```
+
 Using piping and *dplyr*'s `mutate()`:
 
 ```r
@@ -101,6 +108,19 @@ nhanes$cholesterol<-with(nhanes,base_when(
    'Borderline high' = (lbxtc>=200)&(lbxtc<240),
    'High' = (lbxtc>=240)
 ))
+```
+
+Using only base R, with native piping and `transform()`:
+
+```r
+nhanes<-nhanes |>
+  transform(
+    cholesterol=base_when(
+      'Desirable' = (lbxtc<200),
+      'Borderline high' = (lbxtc>=200)&(lbxtc<240),
+      'High' = (lbxtc>=240)
+    )
+  )
 ```
 
 Using piping and *dplyr*'s `mutate()`:
