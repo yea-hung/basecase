@@ -74,11 +74,11 @@ Using only base R, with `with()`:
 nhanes$country<-with(nhanes,base_match(dmdborn4,'USA'=1,'Other'=2))
 ```
 
-Using tidyverse piping (this example requires *dplyr*):
+Using native piping:
 
 ```r
-nhanes<-nhanes %>% 
-  mutate(country=base_match(dmdborn4,'USA'=1,'Other'=2)
+nhanes<-nhanes |>
+  mutate(country=base_match(dmdborn4,'USA'=1,'Other'=2))
 ```
 
 ##  `base_when()`
@@ -103,11 +103,10 @@ nhanes$cholesterol<-with(nhanes,base_when(
 ))
 ```
 
-Using tidyverse piping (this example requires *dplyr*):
-
+Using native piping:
 
 ```r
-nhanes<-nhanes %>% 
+nhanes<-nhanes |>
   mutate(
     cholesterol=base_when(
       'Desirable' = (lbxtc<200),
