@@ -2,12 +2,16 @@
 % Please edit documentation in R/base_when.r
 \name{base_when}
 \alias{base_when}
-\title{\code{base_when()}}
+\title{A base-R approxmation of \code{case_when()}}
 \usage{
-base_when(...)
+base_when(..., as_factor = TRUE, string_for_na = "")
 }
 \arguments{
-\item{conditions}{conditions for defining the replacement values, specified as a named list, with each element in \code{'label'=logical_vector} format, with the levels listed in the desired order}
+\item{...}{conditions for defining the replacement values, specified as a named list, with each element in \code{'label'=logical_vector} format, with the levels listed in the desired order}
+
+\item{as_factor}{logical, controlling whether the function should return a factor}
+
+\item{string_for_na}{string value that will be converted to NA}
 }
 \value{
 a factor
@@ -16,9 +20,16 @@ a factor
 A base-R approximation of \emph{dplyr}'s \code{case_when()}. Unlike \code{case_when()}, \code{base_when()} returns a factor. The levels will be ordered according to the order included in \code{conditions}.
 }
 \examples{
-nhanes$cholesterol<-base_when(
-   'Desirable' = (nhanes$lbxtc<200),
-   'Borderline high' = (nhanes$lbxtc>=200)&(nhanes$lbxtc<240),
-   'High' = (nhanes$lbxtc>=240)
-)
+# load data
+data(nhanes)
+
+# define cholesterol
+nhanes<-nhanes |>
+  transform(
+    cholesterol=base_when(
+      'Desirable' = (lbxtc<200),
+      'Borderline high' = (lbxtc>=200)&(lbxtc<240),
+      'High' = (lbxtc>=240)
+    )
+  )
 }

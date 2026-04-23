@@ -1,11 +1,12 @@
 Package: basecase
 Title: basecase
-Version: 2025.5.05
+Version: 2026.03.31
 Authors@R: 
     person(given = 'Yea-Hung', family = 'Chen', 
        email = 'yea-hung.chen@ucsf.edu', role = c('aut','cre'))
-Description: Base-R functions for mimicking dplyr's case_match() and case_when()
-License: MIT
+Description: Base-R functions for mimicking dplyr's case_match() and case_when().
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+LazyData: true

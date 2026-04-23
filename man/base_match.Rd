@@ -2,14 +2,18 @@
 % Please edit documentation in R/base_match.r
 \name{base_match}
 \alias{base_match}
-\title{\code{base_match()}}
+\title{A base-R approxmation of \code{case_match()}}
 \usage{
-base_match(original_variable, ...)
+base_match(original_variable, ..., as_factor = TRUE, string_for_na = "")
 }
 \arguments{
 \item{original_variable}{the original variable}
 
-\item{codebook}{the codebook, specified as a named vector, with each element in \code{'label'=level} format, with the levels listed in the desired order}
+\item{...}{the codebook, specified as a named vector, with each element in \code{'label'=level} format, with the levels listed in the desired order}
+
+\item{as_factor}{logical, controlling whether the function should return a factor}
+
+\item{string_for_na}{string value that will be converted to NA}
 }
 \value{
 a factor
@@ -18,5 +22,11 @@ a factor
 A base-R approximation of \emph{dplyr}'s \code{case_match()}. Unlike \code{case_match()}, \code{base_when()} returns a factor. The levels will be ordered according to the order included in \code{codebook}.
 }
 \examples{
-nhanes$country<-base_match(nhanes$dmdborn4,'USA'=1,'Other'=2)
+# load data
+data(nhanes)
+
+# define country
+nhanes<-nhanes |> transform(
+  country=base_match(nhanes$dmdborn4,'USA'=1,'Other'=2)
+)
 }
